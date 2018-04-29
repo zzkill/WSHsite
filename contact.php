@@ -58,7 +58,7 @@
           <hr>
         
    
-  <form id="form1">
+  <form id="form1" method="post" action="#">
         
         <br>
         <div>
@@ -115,7 +115,7 @@
 
 
 <?php
-    $data = $_POST['name'] . '-' . $_POST['email'] . '--' .$_POST['comment']"\n";
+    $data = $_POST['name'] . '-' . $_POST['email'] . '-' . $_POST['comment']"\n";
     $ret = file_put_contents('mydata.txt', $data, FILE_APPEND | LOCK_EX);
     if($ret === false) {
         die('There was an error writing this file');
