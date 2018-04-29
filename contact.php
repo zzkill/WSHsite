@@ -63,18 +63,18 @@
         <br>
         <div>
     <h5>Name</h5>
-        <input class="input-style form-control" id="form3" type="text" required placeholder="Name">
+        <input class="input-style form-control" id="form3" type="text" required placeholder="Name" name="name">
         </div>
 
        <br>
         <div id="form2">
         <h5>Email</h5>
-        <input class="input-style form-control" id="form3" type="t" required placeholder="Your@email.com">
+        <input class="input-style form-control" id="form3" type="email" required placeholder="Your@email.com" name="email">
         </div>
         <br>
        <div>
     <h5>What do you wanna tell us ?</h5>
-        <textarea placeholder="Leave your comment here" rows="4" style="resize: none; text-align: center; width: 80%"></textarea>
+        <textarea placeholder="Leave your comment here" rows="4" style="resize: none; text-align: center; width: 80%" name="comment"></textarea>
       </div>
 <br><br>
     <input class="button" id="button" type="submit" value="Done" form-control" style="">
@@ -109,7 +109,14 @@
     <script src="assets/js/tether.js"></script>
     <script src="assets/js/bootstrap.js"></script>
 
-
 </body>
 
 </html>
+
+
+<?php
+    $data = $_POST['name'] . '-' . $_POST['email'] . '--' .$_POST['comment']"\n";
+    $ret = file_put_contents('mydata.txt', $data, FILE_APPEND | LOCK_EX);
+    if($ret === false) {
+        die('There was an error writing this file');
+?>
