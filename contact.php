@@ -58,7 +58,7 @@
           <hr>
         
    
-  <form id="form1" method="post" action="#">
+  <form id="form1" method="POST" action="#">
         
         <br>
         <div>
@@ -77,7 +77,7 @@
         <textarea placeholder="Leave your comment here" rows="4" style="resize: none; text-align: center; width: 80%" name="comment"></textarea>
       </div>
 <br><br>
-    <input class="button" id="button" type="submit" value="Done" form-control" style="">
+    <input class="button" id="button" type="submit" value="Done" name="send">
   </form>
     </div>
     </div>
@@ -115,8 +115,13 @@
 
 
 <?php
-    $data = $_POST['name'] . '-' . $_POST['email'] . '-' . $_POST['comment']"\n";
-    $ret = file_put_contents('mydata.txt', $data, FILE_APPEND | LOCK_EX);
-    if($ret === false) {
-        die('There was an error writing this file');
+if (isset($_POST['send'])) {
+    $handle = fopen("dados.html", "a+");
+    $text = "<tr>
+                 <td>" . $_POST['name'] . "</td>
+                 <td>" . $_POST['email'] . "</td>
+                 <td>" . $_POST['comment'] . "</td>";
+    fputs($handle, $text);
+    fclose($handle);
+}
 ?>
