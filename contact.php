@@ -58,23 +58,23 @@
           <hr>
         
    
-  <form id="form1" method="POST" action="#">
+  <form id="form1" method="POST">
         
         <br>
         <div>
     <h5>Name</h5>
-        <input class="input-style form-control" id="form3" type="text" required placeholder="Name" name="name">
+        <input class="input-style form-control" maxlength="16" id="form3" type="text" required placeholder="Name" name="name">
         </div>
 
        <br>
         <div id="form2">
         <h5>Email</h5>
-        <input class="input-style form-control" id="form3" type="email" required placeholder="Your@email.com" name="email">
+        <input class="input-style form-control" maxlength="24" id="form3" type="email" required placeholder="Your@email.com" name="email">
         </div>
         <br>
        <div>
     <h5>What do you wanna tell us ?</h5>
-        <textarea placeholder="Leave your comment here" rows="4" style="resize: none; text-align: center; width: 80%" name="comment"></textarea>
+        <textarea placeholder="Leave your comment here" rows="4" style="resize: none; text-align: center; width: 80%" maxlength="180" name="comment"></textarea>
       </div>
 <br><br>
     <input class="button" id="button" type="submit" value="Done" name="send">
@@ -112,7 +112,6 @@
 </body>
 
 </html>
-
 
 <?php
 if (isset($_POST['send'])) {

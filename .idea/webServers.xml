@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="bd45f5cf-f08d-426a-bba3-2fc3a208add7" name="oi" url="http://143.106.241.1">
+        <fileTransfer host="143.106.241.1" port="1609" rootFolder="/var/www/infd333" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="1609" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
